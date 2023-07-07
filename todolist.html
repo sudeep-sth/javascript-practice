@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(163, 164, 165);
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            /* top: 500px; */
+            align-items: center;
+        }
+
+        .main {
+            background-color: rgb(203, 117, 174);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 50vh;
+
+
+        }
+
+        .ip {
+            display: flex;
+            justify-content: center;
+            height: 50px;
+        }
+
+        .lis {
+            color: white;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="ip">
+            <input type="text" id="input">
+            <button id="btn">add</button>
+        </div>
+        <div class="lis">
+            <ul id="list">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        const text = document.getElementById("input")
+        const addbutton = document.getElementById("btn")
+        const list = document.getElementById("list")
+
+
+
+
+        // const todolist = (event) => {
+        // addbutton.addEventListener("click", (event) => {
+        function todolist(event) {
+
+
+
+            if (text.value === "") {
+                alert("you have to write something");
+            }
+            else {
+
+                // const check = document.createElement("input");
+                const createli = document.createElement("li");
+                const dltbtn = document.createElement("button");
+                const edtbtn = document.createElement("button");
+
+
+                // check.type = "checkbox";
+                createli.innerText = text.value;
+                dltbtn.innerText = "delete";
+                edtbtn.innerText = "Edit";
+
+
+                // list.style.border = "10px solid red"
+                // list.style.display = "inline"
+                // list.style.width = "200px"
+
+
+                // createli.appendChild(input.value)
+                // console.log("print", createli)
+                // list.createli.appendChild(check)
+
+                createli.appendChild(edtbtn);
+                createli.appendChild(dltbtn);
+                list.appendChild(createli)
+                text.value = "";
+
+
+                dltbtn.addEventListener('click', () => {
+                    // list.removeChild(check);
+                    list.removeChild(createli);
+                    createli.removeChild(dltbtn);
+                })
+
+
+                edtbtn.addEventListener('click', () => {
+
+                    console.log("print")
+
+                    // function change() {
+                    //     createli.innerText = prompt("this is edit");
+                    // }
+                })
+            }
+        }
+
+
+        addbutton.addEventListener('click', todolist);
+
+        text.addEventListener('keypress', (event) => {
+            if (event.key === "Enter") {
+                todolist();
+
+            }
+        });
+
+        // console.log(todolist);
+
+
+
+        // addbutton.addEventListener('click', () => {
+
+        //     const createli = document.createElement("li")
+        //     const dltbutton = document.createElement("button")
+        //     createli.innerText = text.value;
+        //     dltbutton.innerText = "delete";
+        //     list.appendChild(createli);
+        //     list.appendChild(dltbutton);
+        //     text.value = "";
+
+            // createli.innerText = text.value;
+
+        //     dltbutton.addEventListener('click', () => {
+        //         list.removeChild(createli);
+        //         list.removeChild(dltbutton);
+        //     })
+        // })
+
+
+
+
+    </script>
+</body>
+
+</html>

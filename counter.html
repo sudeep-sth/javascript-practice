@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        #out {
+            border: 2px solid blue;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <button id="add">Increment</button>
+        <p id="out">0</p>
+        <button id="sub">Decrement</button>
+    </div>
+    <script>
+        const add = document.getElementById("add")
+        const out = document.getElementById("out")
+        const sub = document.getElementById("sub")
+
+
+        add.addEventListener('click', () => {
+            // console.log(out.innerText);
+            out.innerText = Number(out.innerText) + 1;
+
+
+
+        })
+        sub.addEventListener('click', () => {
+            // console.log(out.innerText);
+            if (Number(out.innerText) <= 0) {
+                alert("Can't decriment below zero")
+            }
+            else {
+                out.innerText = Number(out.innerText) - 1;
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>

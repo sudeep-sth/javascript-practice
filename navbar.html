@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .navbar-full {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(169, 209, 244);
+            color: black;
+            padding: 20px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-left {
+            display: none;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 200px;
+            height: 100vh;
+            background-color: antiquewhite;
+            padding: 20px;
+
+        }
+
+        .create-nav {
+            display: none;
+        }
+
+        @media screen and (max-width:500px) {
+            .nav-right {
+                display: none;
+            }
+
+            .create-nav {
+                display: block;
+
+            }
+
+        }
+
+        @media screen and (min-width:500px) {
+            .nav-left {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-full">
+        <div>logo</div>
+        <div class="nav-right">
+            <div>home</div>
+            <div>menu</div>
+            <div>contact</div>
+            <div>blog</div>
+            <div>gallary</div>
+        </div>
+
+
+
+        <div class="create-nav">right nav</div>
+
+        <div class="nav-left">
+            <div class="close">
+                <button>close</button>
+            </div>
+
+            <div>home</div>
+            <div>menu</div>
+            <div>contact</div>
+            <div>blog</div>
+            <div>gallary</div>
+        </div>
+    </div>
+
+    <script>
+        const navbar = document.getElementsByClassName("create-nav")[0]
+        const navleft = document.getElementsByClassName("nav-left")[0]
+        const close = document.getElementsByClassName("close")[0]
+
+
+        navbar.addEventListener('click', () => {
+            navleft.style.display = "block";
+        });
+
+        close.addEventListener('click', () => {
+            navleft.style.display = "none";
+        });
+
+    </script>
+</body>
+
+</html>
